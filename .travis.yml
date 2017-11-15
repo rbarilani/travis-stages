@@ -2,5 +2,9 @@ jobs:
   include:
     - stage: test
       script: echo test
+    - stage: e2e test
+      script: exit 1
+      after_failure:
+        - echo e2e test failed
     - stage: deploy
       script: echo deploy
